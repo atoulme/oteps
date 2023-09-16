@@ -23,31 +23,170 @@ Components should not be marked as stable if their user-visible interfaces are n
 
 #### Development
 
-Not all pieces of the component are in place yet, and it might not be available for users yet. Bugs and performance issues are expected to be reported. User feedback is desired, especially regarding the user experience (configuration options, component observability, technical implementation details, and so on). Configuration options might break often depending on how things evolve. The component SHOULD NOT be used in production. The component MAY be removed without prior notice.
+##### Feature set
+Not all pieces of the component are in place yet, and it might not be available for users yet.
+
+##### Support
+Bugs and performance issues are expected to be reported. There is no guarantee of the reports being addressed.
+
+##### User feedback
+User feedback is desired, especially regarding the user experience (configuration options, component observability, technical implementation details, and so on).
+
+##### Configuration stability
+Configuration options might break often depending on how things evolve.
+
+##### API stability
+The API may break in between minor versions without notice.
+
+##### Production readiness
+The component SHOULD NOT be used in production.
+
+##### Lifecycle guarantees
+The component MAY be removed without prior notice.
 
 #### Alpha
 
-This is the default level: any components with no explicit maturity level should be assumed to be "Alpha". The component is ready to be used for limited non-critical production workloads, and the authors of this component welcome user feedback. Bugs and performance problems are encouraged to be reported, but component owners might not work on them immediately. The component's interface and configuration options might often change without backward compatibility guarantees. Components at this stage might be dropped at any time without notice.
+This is the default level: any components with no explicit maturity level should be assumed to be "Alpha".
+
+##### Accession
+
+A component moves to alpha when codeowners of the component agree that the component is ready to be used for limited non-critical production workloads, and the authors of this component welcome user feedback.
+
+##### Feature set
+The feature set of the component is in flux and it's unclear if the feature set is complete.
+
+##### Support
+ Bugs and performance problems are encouraged to be reported, but component owners might not work on them immediately.
+
+##### User feedback
+The authors of this component welcome user feedback.
+
+##### Configuration stability
+The component's configuration options might often change without backward compatibility guarantees.
+
+##### API stability
+The component's interface might often change without backward compatibility guarantees.
+
+##### Production readiness
+The component is ready to be used for limited non-critical production workloads.
+
+##### Lifecycle guarantees
+Components at this stage might be dropped at any time without notice.
 
 #### Beta
 
-Same as Alpha, but the interfaces (API, configuration, generated telemetry) are treated as stable whenever possible. While there might be breaking changes between releases, component owners should try to minimize them. A component at this stage is expected to have had exposure to non-critical production workloads already during its Alpha phase, making it suitable for broader usage.
+##### Accession
+The component moves to beta when the configuration and API are sufficiently stable that it is possible to continue to develop with minimal breaking changes. 
+The component has been tested for limited non-critical production workloads to the satisfaction of the codeowners and maintainers.
 
-#### Feature freeze
+##### Feature set
+The component final feature set is known, and owners are working towards fulfilling the feature set.
 
-The component is feature-complete and ready for broader usage. The component is ready to be declared stable, it might just need to be tested in more production environments before that can happen. Bugs and performance problems are expected to be reported, and there's an expectation that the component owners will work on them. Breaking changes, including configuration options and the component's output, are not expected to happen without prior notice unless under special circumstances.
+##### Support
+ Bugs and performance problems are encouraged to be reported, but component owners might not work on them immediately.
+
+##### User feedback
+The authors of this component welcome user feedback.
+
+##### Configuration stability
+The component's configuration options are declared stable ; breaking changes are announced, and owners try to minimize them.
+
+##### API stability
+The component's interface is declared stable ; breaking changes are announced, and owners try to minimize them.
+
+##### Production readiness
+The component is ready to be used for broader usage.
+
+##### Lifecycle guarantees
+Components at this stage might be dropped at any time without notice. They may also go through the deprecation stage.
 
 #### Stable
 
-The component is ready for general availability. Bugs and performance problems should be reported, and there's an expectation that the component owners will work on them. Breaking changes, including configuration options and the component's output, are not expected to happen without prior notice unless under special circumstances.
+##### Accession
+The component moves to stable when the configuration and API are stable and no breaking changes are expected. 
+The component is ready for production usage.
+The codeowners of the component have documented support processes.
+
+##### Feature set
+The component feature set is complete. Further changes to the component are possible.
+
+##### Support
+Bugs and performance problems should be reported, and there's an expectation that the component owners will work on them.
+The component owners have adopted or defined and published the process by which they will handle bug reports.
+The component owners define and are held to a typical response time.
+
+##### User feedback
+The authors of this component welcome user feedback.
+
+##### Configuration stability
+Breaking changes are not expected to happen without prior notice unless under special circumstances.
+
+##### API stability
+Breaking changes are not expected to happen without prior notice unless under special circumstances.
+
+##### Production readiness
+The component is ready for general availability.
+
+##### Lifecycle guarantees
+Components at this stage must go through the deprecated stage before removal.
 
 #### Deprecated
 
-Development of this component is halted, and no further support will be provided. No new versions are planned, and the component might be removed from its included distributions. Note that new issues will likely not be worked on except for critical security issues. Components that are included in distributions are expected to exist for at least two minor releases or six months, whichever happens later. They also MUST communicate in which version they will be removed, either in terms of a concrete version number or the date of a release, like: "the first release after 2023-08-01".
+##### Accession
+Codeowners and maintainers decide to move to the deprecated stage.
+
+##### Feature set
+Development of this component is halted, and no further support will be provided.
+
+##### Support
+New issues will likely not be worked on except for critical security issues. 
+
+##### User feedback
+User feedback will likely not be reviewed.
+
+##### Configuration stability
+No changes to the component are expected in this stage.
+
+##### API stability
+No changes to the component are expected in this stage.
+
+##### Production readiness
+The component should no longer be used.
+
+##### Lifecycle guarantees
+No new versions are planned, and the component might be removed from its included distributions.
+Components that are included in distributions are expected to exist for at least two minor releases or six months, whichever happens later. They also MUST communicate in which version they will be removed, either in terms of a concrete version number or the date of a release, like: "the first release after 2023-08-01".
 
 #### Unmaintained
 
-A component identified as unmaintained does not have an active code owner. Such components may have never been assigned a code owner, or a previously active code owner has not responded to requests for feedback within 6 weeks of being contacted. Issues and pull requests for unmaintained components SHOULD be labeled as such. After 6 months of being unmaintained, these components MAY be deprecated. Unmaintained components are actively seeking contributors to become code owners.
+##### Accession
+A component without active codeowner is moved to the unmaintained maturity level.
+
+Such components may have never been assigned a code owner, or a previously active code owner has not responded to requests for feedback within 6 weeks of being contacted.
+
+##### Feature set
+N/A
+
+##### Support
+No support is offered.
+
+##### User feedback
+User feedback is de facto ignored.
+
+Unmaintained components are actively seeking contributors to become code owners.
+
+##### Configuration stability
+No changes to the component are expected in this stage.
+
+##### API stability
+No changes to the component are expected in this stage.
+
+##### Production readiness
+The component can be used with no guarantees. 
+
+##### Lifecycle guarantees
+After 6 months of being unmaintained, these components MAY be deprecated.
+
 
 ## Trade-offs and mitigations
 
